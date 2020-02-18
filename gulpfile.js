@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var imageResize = require('gulp-image-resize');
 var del = require('del');
 
-gulp.task('resize', function () {
+gulp.task('resize', gulp.series(function () {
     return gulp.src('images/*.*')
         //.pipe(imageResize({
         //    width: 1024,
@@ -14,10 +14,10 @@ gulp.task('resize', function () {
             imageMagick: true
         }))
         .pipe(gulp.dest('images/thumbs'));
-});
+}));
 
-gulp.task('del', ['resize'], function () {
+gulp.task('del', gulp.series('resize', function () {
     return del(['images/*.*']);
-});
+}));
 
-gulp.task('default', ['del']);
+gulp.task('default', gulp.series('del'));

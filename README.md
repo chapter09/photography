@@ -6,6 +6,12 @@ A jekyll website for photographers
 2. To add new pictures, you need to just upload them. __No code__ changes required.
 3. This I like the most, you get to see EXIF data like __aperture, shutter speed, iso__ etc when you click on any image automagically.
 
+
+```
+brew install imagemagick
+brew install graphicsmagick
+```
+
 ## Quick Start
 If you know a tad about tech and love taking pictures then this open-source project may help you setup a website to showcase
 all your creations without effort. And not just that, with this you need not pay a single dime to host your website as
